@@ -10,7 +10,7 @@ conn <-dbConnect(MariaDB(),  #Connecting to UMN sql
                  password=key_get("latis-mysql","hazbo002"),  
                  host="mysql-prod5.oit.umn.edu",
                  port=3306,
-                 ssl.ca = 'mysql_hotel_umn_20220728_interm.cer')
+                 ssl.ca = '../mysql_hotel_umn_20220728_interm.cer') #was sad, needed to add the ../ after changing the wd to where the r file is located...
 
 result1 <- dbGetQuery(conn,"SHOW DATABASES;") #( I was too lazy to call IT to download the SQLworkbook thing so I'm doing it this way, the first three results are so I understand the data)
 result2 <- dbExecute(conn, "USE cla_tntlab;")
